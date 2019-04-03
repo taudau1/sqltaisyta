@@ -1,0 +1,11 @@
+Select authors.name, count(books.authorid)
+FROM authors left join books
+on authors.authorid = books.authorid
+ group by authors.name;
+
+select count(books.authorId) as count, name from books, authors where books.authorid = authors.authorid group by books.authorId;
+ 
+ DELETE FROM authors
+ WHERE authors.authorId NOT IN (SELECT books.authorid 
+                        FROM books
+			where books.authorid is NOT NULL);

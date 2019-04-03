@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS `Booksauthors` (
+
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+
+  `bookid` int(11) NOT NULL,
+
+  `authorid` int(11) NOT NULL,
+
+  PRIMARY KEY (id)
+
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+INSERT INTO Booksauthors (id, bookid, authorid) VALUES
+(1, 1, 4),
+(2, 1, 2),
+(3, 1, 5);
+
+ALTER TABLE books DROP authorid;
+
+alter table books collate utf8_lithuanian_ci;
+
+SELEct bookid ,GROUP_CONCAT(authorid) authorsid
+ FROM booksauthors
+ GROUP BY bookid;

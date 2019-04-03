@@ -1,0 +1,5 @@
+select * from books;
+
+select title from books order by title asc;
+
+select count(books.authorId) as count, name from books, authors where books.authorid = authors.authorid group by books.authorId;

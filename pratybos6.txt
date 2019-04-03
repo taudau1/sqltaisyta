@@ -1,0 +1,1 @@
+﻿mysqldump -u root -p -h localhost nfq > C:\Users\S\Desktop\Stuff\nfq\dump.txt
